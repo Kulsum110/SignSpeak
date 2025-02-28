@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "SignSpeak",
+  "description": "Translate video content into sign language using pre-recorded sign language videos.",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "http:///",
+    "https:///"
+  ]
+}
